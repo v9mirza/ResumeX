@@ -794,29 +794,68 @@ const Home = () => {
       <section className="lp-section-cta">
         <div className="container">
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="lp-cta-card"
           >
-            <h2 className="lp-cta-title">
-              Your resume, ready in<br />10 minutes.
-            </h2>
-            <p className="lp-cta-subtitle">
-              Guided steps, live preview, instant PDF. Free forever — no credit card needed.
-            </p>
-            <div className="lp-cta-actions">
-              <Link to="/register" className="btn-lp-primary">
-                Create Your Free Account
-              </Link>
-              <div className="lp-cta-trust">
-                <span className="lp-cta-trust-item"><CheckCircle size={14} /> Free forever</span>
-                <span className="lp-cta-trust-item"><CheckCircle size={14} /> No credit card</span>
-                <span className="lp-cta-trust-item"><CheckCircle size={14} /> 30 second setup</span>
+            {/* Decorative glow */}
+            <div className="lp-cta-glow" aria-hidden="true" />
+
+            <div className="lp-cta-inner">
+              {/* Copy + actions */}
+              <div className="lp-cta-copy">
+                <span className="lp-cta-eyebrow">
+                  <CheckCircle size={13} />
+                  Free forever · No credit card
+                </span>
+
+                <h2 className="lp-cta-title">
+                  Your resume, ready in{' '}
+                  <span className="text-gradient-blue">10 minutes</span>.
+                </h2>
+
+                <p className="lp-cta-subtitle">
+                  Guided steps, live preview, and instant PDF export — everything you need to send a polished resume today.
+                </p>
+
+                <div className="lp-cta-actions">
+                  <Link to="/register" className="btn-lp-primary lp-cta-btn">
+                    Get started free <ArrowRight size={18} />
+                  </Link>
+                  <p className="lp-cta-login">
+                    Already have an account? <Link to="/login">Log in</Link>
+                  </p>
+                </div>
               </div>
-              <p className="lp-cta-login">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
+
+              {/* Benefit checklist panel */}
+              <div className="lp-cta-panel">
+                <p className="lp-cta-panel-label">What you get</p>
+                <ul className="lp-cta-benefits">
+                  {[
+                    { icon: <PenLine size={16} />, text: 'Guided step-by-step builder', color: '#6366f1', bg: 'rgba(99,102,241,0.1)' },
+                    { icon: <Cloud size={16} />, text: 'Autosave — never lose progress', color: '#0082c9', bg: 'rgba(0,130,201,0.1)' },
+                    { icon: <Eye size={16} />, text: 'Live template preview', color: '#10b981', bg: 'rgba(16,185,129,0.1)' },
+                    { icon: <FileJson size={16} />, text: 'PDF & JSON export', color: '#f59e0b', bg: 'rgba(245,158,11,0.1)' },
+                    { icon: <LayoutTemplate size={16} />, text: 'ATS-friendly templates', color: '#6366f1', bg: 'rgba(99,102,241,0.1)' },
+                  ].map((item) => (
+                    <li key={item.text} className="lp-cta-benefit">
+                      <span className="lp-cta-benefit-icon" style={{ background: item.bg, color: item.color }}>
+                        {item.icon}
+                      </span>
+                      <span className="lp-cta-benefit-text">{item.text}</span>
+                      <CheckCircle size={15} className="lp-cta-benefit-check" />
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="lp-cta-panel-footer">
+                  <ShieldCheck size={14} />
+                  <span>30-second signup · Open-source on GitHub</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

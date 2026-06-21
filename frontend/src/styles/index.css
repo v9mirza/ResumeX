@@ -909,40 +909,56 @@ ul {
 
 .lp-section-cta {
   background: linear-gradient(180deg, var(--lp-bg-alt) 0%, var(--lp-bg) 50%, var(--lp-bg-alt) 100%);
-  padding: 120px 0;
+  padding: 100px 0 120px;
   border-top: 1px solid var(--lp-border);
-  text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .lp-section-cta::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 50% 80%, rgba(0, 130, 201, 0.08) 0%, transparent 60%);
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 60%, rgba(99, 102, 241, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 40%, rgba(0, 130, 201, 0.09) 0%, transparent 55%);
   pointer-events: none;
 }
 
-/* SaaS-style CTA card: gradient border effect + glow */
+/* CTA card — wide split layout */
 .lp-cta-card {
   position: relative;
   z-index: 1;
-  max-width: 560px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 56px 48px;
+  padding: 48px;
   background: var(--lp-bg);
   border-radius: 24px;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5) inset, 0 24px 48px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--lp-border);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.5) inset,
+    0 32px 64px -16px rgba(0, 0, 0, 0.1),
+    0 0 0 1px var(--lp-border);
+  overflow: hidden;
 }
 
-/* Gradient border via pseudo-element (SaaS premium feel) */
+.lp-cta-glow {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 130, 201, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 .lp-cta-card::before {
   content: '';
   position: absolute;
   inset: -1px;
   border-radius: 25px;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 130, 201, 0.4) 0%, rgba(0, 130, 201, 0.1) 40%, transparent 60%, rgba(99, 102, 241, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(0, 130, 201, 0.45) 0%, rgba(0, 130, 201, 0.08) 35%, transparent 55%, rgba(99, 102, 241, 0.15) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -951,45 +967,221 @@ ul {
 }
 
 :root[data-theme='dark'] .lp-cta-card {
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset, 0 24px 48px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--lp-border);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset, 0 32px 64px -16px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--lp-border);
 }
 
 :root[data-theme='dark'] .lp-cta-card::before {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.35) 0%, rgba(88, 166, 255, 0.08) 40%, transparent 60%, rgba(99, 102, 241, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.4) 0%, rgba(88, 166, 255, 0.08) 35%, transparent 55%, rgba(99, 102, 241, 0.12) 100%);
+}
+
+:root[data-theme='dark'] .lp-cta-glow {
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.1) 0%, transparent 70%);
+}
+
+/* Split inner layout */
+.lp-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .lp-cta-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+/* Left copy column */
+.lp-cta-copy {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .lp-cta-copy {
+    text-align: left;
+  }
+}
+
+.lp-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+
+:root[data-theme='dark'] .lp-cta-eyebrow {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.28);
 }
 
 .lp-cta-card .lp-cta-title {
-  font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--lp-text);
-  margin-bottom: 12px;
-  line-height: 1.2;
+  margin-bottom: 14px;
+  line-height: 1.15;
 }
 
 .lp-cta-card .lp-cta-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: var(--lp-text-muted);
   line-height: 1.65;
   margin-bottom: 28px;
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .lp-cta-card .lp-cta-subtitle {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .lp-cta-card .lp-cta-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .lp-cta-card .lp-cta-actions {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 }
 
-.lp-cta-card .btn-lp-primary {
-  min-width: 220px;
-  padding: 14px 32px;
+@media (min-width: 768px) {
+  .lp-cta-card .lp-cta-actions {
+    align-items: flex-start;
+  }
+}
+
+.lp-cta-btn {
+  min-width: 200px;
+  padding: 15px 32px;
   font-size: 1.05rem;
 }
 
+.lp-cta-login {
+  font-size: 0.875rem;
+  color: var(--lp-text-muted);
+  margin: 0;
+}
+
+.lp-cta-login a {
+  color: var(--lp-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lp-cta-login a:hover {
+  text-decoration: underline;
+}
+
+/* Right benefit panel */
+.lp-cta-panel {
+  background: var(--lp-bg-alt);
+  border: 1px solid var(--lp-border);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-cta-panel-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lp-text-muted);
+  margin: 0;
+}
+
+.lp-cta-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-cta-benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--lp-bg);
+  border: 1px solid var(--lp-border);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.lp-cta-benefit:hover {
+  border-color: rgba(0, 130, 201, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+:root[data-theme='dark'] .lp-cta-benefit:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lp-cta-benefit-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-cta-benefit-text {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--lp-text);
+  line-height: 1.3;
+}
+
+.lp-cta-benefit-check {
+  flex-shrink: 0;
+  color: #10b981;
+  opacity: 0.7;
+}
+
+.lp-cta-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding-top: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--lp-text-muted);
+}
+
+.lp-cta-panel-footer svg {
+  color: var(--lp-accent);
+  flex-shrink: 0;
+}
+
+/* Legacy trust row — kept for other pages if referenced */
 .lp-cta-trust {
   display: flex;
   flex-wrap: wrap;
@@ -1011,22 +1203,6 @@ ul {
 .lp-cta-trust-item svg {
   flex-shrink: 0;
   color: var(--lp-success, #10b981);
-}
-
-.lp-cta-login {
-  font-size: 0.9rem;
-  color: var(--lp-text-muted);
-  margin-top: 8px;
-}
-
-.lp-cta-login a {
-  color: var(--lp-accent);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.lp-cta-login a:hover {
-  text-decoration: underline;
 }
 
 .lp-cta-note {
@@ -2472,16 +2648,28 @@ ul {
 
 @media (max-width: 600px) {
   .lp-cta-card {
-    padding: 40px 24px;
+    padding: 32px 24px;
   }
 
   .lp-cta-card .lp-cta-title {
     font-size: 1.625rem;
   }
 
-  .lp-cta-trust {
-    flex-direction: column;
-    gap: 8px;
+  .lp-cta-btn {
+    width: 100%;
+  }
+
+  .lp-cta-panel {
+    padding: 20px 16px;
+  }
+
+  .lp-cta-benefit {
+    padding: 9px 10px;
+    gap: 10px;
+  }
+
+  .lp-cta-benefit-text {
+    font-size: 0.82rem;
   }
 }
 
