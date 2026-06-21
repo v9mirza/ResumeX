@@ -350,13 +350,7 @@ const Builder = () => {
 
     return (
         <div className="landing-page">
-            <LandingNav
-                rightContent={
-                    <>
-                        <Link to="/dashboard" className="lp-nav-link" style={{ color: 'var(--lp-text)', textDecoration: 'none', fontWeight: 500 }}>Dashboard</Link>
-                    </>
-                }
-            />
+            <LandingNav />
 
             {/* Builder toolbar */}
             <div className="builder-toolbar no-print">

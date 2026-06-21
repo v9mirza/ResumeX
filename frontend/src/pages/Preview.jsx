@@ -177,11 +177,7 @@ const Preview = () => {
   if (empty) {
     return (
       <div className="landing-page">
-        <LandingNav
-          rightContent={
-            <Link to="/dashboard" className="lp-nav-link" style={{ color: 'var(--lp-text)', textDecoration: 'none', fontWeight: 500 }}>Dashboard</Link>
-          }
-        />
+        <LandingNav />
         <div className="preview-container preview-empty">
           <div className="lp-minimal-card" style={{ maxWidth: '420px', textAlign: 'center' }}>
             <h2 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--lp-text)', marginBottom: '12px' }}>
@@ -219,13 +215,7 @@ const Preview = () => {
 
   return (
     <div className="landing-page">
-      <LandingNav
-        rightContent={
-          <>
-            <Link to="/dashboard" className="lp-nav-link" style={{ color: 'var(--lp-text)', textDecoration: 'none', fontWeight: 500 }}>Dashboard</Link>
-          </>
-        }
-      />
+      <LandingNav />
 
       <div className="preview-container">
 

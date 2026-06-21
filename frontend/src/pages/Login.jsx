@@ -45,16 +45,7 @@ const Login = () => {
                 description="Sign in to your ResumeX account to manage and export your ATS‑friendly resumes."
                 canonicalPath="/login"
             />
-            <LandingNav
-                rightContent={
-                    <>
-                        <span className="lp-nav-explain">New here?</span>
-                        <Link to="/register" className="btn-lp-primary lp-nav-cta lp-nav-link">
-                            Sign up
-                        </Link>
-                    </>
-                }
-            />
+            <LandingNav />
 
             <main className="container auth-page-main">
                 <div className="lp-minimal-card auth-card">

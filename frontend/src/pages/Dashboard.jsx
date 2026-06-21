@@ -165,21 +165,7 @@ const Dashboard = () => {
 
     return (
         <div className="landing-page">
-            <LandingNav
-                rightContent={
-                    <>
-                        <span className="lp-nav-email" style={{ fontSize: '0.9rem', color: 'var(--lp-text-muted)' }}>{user?.email}</span>
-                        <Link to="/profile" className="lp-nav-link" style={{ color: 'var(--lp-text)', textDecoration: 'none', fontWeight: 500 }}>Profile</Link>
-                        <button
-                            onClick={logout}
-                            className="btn lp-nav-link"
-                            style={{ color: 'var(--lp-text-muted)', background: 'transparent', border: 'none', cursor: 'pointer', fontWeight: 500 }}
-                        >
-                            Logout
-                        </button>
-                    </>
-                }
-            />
+            <LandingNav />
 
             <main className="container dashboard-page-main">
                 {/* Dashboard header */}

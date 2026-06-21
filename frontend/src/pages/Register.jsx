@@ -55,16 +55,7 @@ const Register = () => {
                 description="Create a free ResumeX account to build ATS‑friendly resumes with live preview and PDF/JSON export."
                 canonicalPath="/register"
             />
-            <LandingNav
-                rightContent={
-                    <>
-                        <span className="lp-nav-explain">Already have an account?</span>
-                        <Link to="/login" className="btn-lp-primary lp-nav-cta lp-nav-link">
-                            Log in
-                        </Link>
-                    </>
-                }
-            />
+            <LandingNav />
 
             <main className="container auth-page-main">
                 <div className="lp-minimal-card auth-card">

@@ -361,7 +361,7 @@ const Admin = () => {
         return (
             <div className="landing-page">
                 <style>{`@keyframes admin-skeleton-pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }`}</style>
-                <LandingNav rightContent={null} />
+                <LandingNav />
                 <main className="container admin-page-main">
                     <section style={{ marginBottom: 24 }}>
                         <div style={{ height: 28, width: 200, borderRadius: 4, background: 'var(--lp-border)', opacity: 0.5, marginBottom: 8 }} />
@@ -390,23 +390,7 @@ const Admin = () => {
 
     return (
         <div className="landing-page">
-            <LandingNav
-                rightContent={
-                    <>
-                        <span className="lp-nav-email" style={{ fontSize: '0.9rem', color: 'var(--lp-text-muted)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-                            Admin
-                        </span>
-                        <Link to="/dashboard" className="lp-nav-link" style={{ color: 'var(--lp-text)', textDecoration: 'none', fontWeight: 500 }}>Go to app</Link>
-                        <button
-                            onClick={handleLogout}
-                            className="btn lp-nav-link"
-                            style={{ color: 'var(--lp-text-muted)', border: 'none', background: 'transparent', cursor: 'pointer', fontWeight: 500 }}
-                        >
-                            Logout
-                        </button>
-                    </>
-                }
-            />
+            <LandingNav />
 
             <main className="container admin-page-main">
                 {/* Admin header */}

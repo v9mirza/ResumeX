@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const ABSOLUTE_BASE = 'https://www.resumex.cv';
 
-export const Seo = ({ title, description, canonicalPath }) => {
+export const Seo = ({ title, description, canonicalPath, jsonLd }) => {
   useEffect(() => {
     if (title) {
       document.title = title;
@@ -59,7 +59,24 @@ export const Seo = ({ title, description, canonicalPath }) => {
       })();
       ogUrl.setAttribute('content', `${ABSOLUTE_BASE}${normalized}`);
     }
-  }, [title, description, canonicalPath]);
+
+    let jsonLdEl = document.getElementById('seo-json-ld');
+    if (jsonLd) {
+      if (!jsonLdEl) {
+        jsonLdEl = document.createElement('script');
+        jsonLdEl.id = 'seo-json-ld';
+        jsonLdEl.type = 'application/ld+json';
+        document.head.appendChild(jsonLdEl);
+      }
+      jsonLdEl.textContent = JSON.stringify(jsonLd);
+    } else if (jsonLdEl) {
+      jsonLdEl.remove();
+    }
+
+    return () => {
+      document.getElementById('seo-json-ld')?.remove();
+    };
+  }, [title, description, canonicalPath, jsonLd]);
 
   return null;
 };

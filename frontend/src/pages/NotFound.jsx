@@ -11,7 +11,7 @@ const NotFound = () => {
         description="The page you’re looking for doesn’t exist. Head back to the ResumeX home page or sign in to your dashboard."
         canonicalPath="/404"
       />
-      <LandingNav rightContent={null} />
+      <LandingNav />
       <main className="container notfound-main">
         <p className="notfound-label" style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.16em', color: 'var(--lp-text-muted)', marginBottom: 12 }}>
           404 – Page not found
