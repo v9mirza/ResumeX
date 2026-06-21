@@ -518,6 +518,30 @@ ul {
   overflow: hidden;
 }
 
+/* Force light background and variables for mockup resume sheets in dark mode */
+.resume-page,
+.hero-mock-body,
+.lp-template-preview-body {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  --lp-bg: #ffffff;
+  --lp-text: #0f172a;
+  --lp-text-muted: #475569;
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+  --text-dim: #9ca3af;
+}
+
+/* Ensure the fade gradients fade to white */
+.hero-mock-fade {
+  background: linear-gradient(to top, #ffffff 20%, transparent) !important;
+}
+
+.lp-template-preview-fade {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.97), transparent) !important;
+}
+
+
 /* Tablet/Desktop Tweaks */
 @media (min-width: 1024px) {
   .paper-preview {
