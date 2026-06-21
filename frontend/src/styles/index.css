@@ -2344,7 +2344,8 @@ ul {
 @media (min-width: 1024px) {
   .lp-bento-grid {
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr;
+    align-items: stretch;
   }
 
   .bento-large {
@@ -2985,6 +2986,7 @@ ul {
 /* ─── Bento Feature Cards ────────────────────────────────── */
 .lp-bento-feature-card {
   gap: 14px;
+  height: 100%;
 }
 
 .lp-bento-icon {
@@ -3043,6 +3045,133 @@ ul {
   flex-shrink: 0;
 }
 
+.lp-builder-step-pill--done {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.lp-builder-step-pill--done .lp-builder-step-num {
+  background: #10b981;
+}
+
+.lp-builder-step-pill--active {
+  border-color: rgba(0, 130, 201, 0.45);
+  background: rgba(0, 130, 201, 0.08);
+  box-shadow: 0 0 0 1px rgba(0, 130, 201, 0.12);
+}
+
+/* Mini builder preview inside the large bento card */
+.lp-builder-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 4px;
+  padding: 16px;
+  background: var(--lp-bg-alt);
+  border: 1px solid var(--lp-border);
+  border-radius: 14px;
+}
+
+@media (min-width: 1024px) {
+  .bento-large .lp-builder-preview {
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+.lp-builder-preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lp-builder-preview-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--lp-text);
+  letter-spacing: -0.01em;
+}
+
+.lp-builder-preview-step {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--lp-text-muted);
+  white-space: nowrap;
+}
+
+.lp-builder-preview-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.lp-builder-preview-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--lp-border);
+  background: var(--lp-bg);
+}
+
+.lp-builder-preview-field--filled {
+  border-style: solid;
+  border-color: rgba(0, 130, 201, 0.18);
+  background: rgba(0, 130, 201, 0.04);
+}
+
+.lp-builder-preview-field-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lp-text-muted);
+}
+
+.lp-builder-preview-field-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--lp-text);
+}
+
+.lp-builder-preview-field-placeholder {
+  font-size: 0.82rem;
+  color: var(--lp-text-muted);
+  font-style: italic;
+}
+
+.lp-builder-preview-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.lp-builder-preview-progress-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--lp-border);
+  overflow: hidden;
+}
+
+.lp-builder-preview-progress-fill {
+  width: 40%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--lp-accent), #10b981);
+}
+
+.lp-builder-preview-progress-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--lp-text-muted);
+  white-space: nowrap;
+}
+
 /* Autosave badge */
 .lp-autosave-badge {
   display: inline-flex;
@@ -3055,8 +3184,8 @@ ul {
   font-size: 0.85rem;
   font-weight: 600;
   color: #10b981;
-  margin-top: auto;
   align-self: flex-start;
+  flex-shrink: 0;
 }
 
 :root[data-theme='dark'] .lp-autosave-badge {
@@ -3419,6 +3548,10 @@ ul {
   /* Builder steps pills */
   .lp-builder-steps     { gap: 6px; }
   .lp-builder-step-pill { padding: 5px 10px; font-size: 0.75rem; }
+
+  /* Builder preview mock */
+  .lp-builder-preview { flex: none; padding: 14px; gap: 12px; }
+  .lp-builder-preview-field { padding: 8px 10px; }
 
   /* Bento headings */
   .lp-bento-heading { font-size: 1.05rem !important; }

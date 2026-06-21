@@ -689,14 +689,44 @@ const Home = () => {
               {/* Mini builder steps visual */}
               <div className="lp-builder-steps">
                 {['Basics', 'Experience', 'Education', 'Skills', 'Projects'].map((step, i) => (
-                  <span key={step} className="lp-builder-step-pill">
+                  <span
+                    key={step}
+                    className={`lp-builder-step-pill${i === 1 ? ' lp-builder-step-pill--active' : ''}${i === 0 ? ' lp-builder-step-pill--done' : ''}`}
+                  >
                     <span className="lp-builder-step-num">{i + 1}</span>
                     {step}
                   </span>
                 ))}
               </div>
 
-              {/* Saved badge */}
+              {/* Mini builder preview — fills the tall card naturally */}
+              <div className="lp-builder-preview" aria-hidden="true">
+                <div className="lp-builder-preview-top">
+                  <span className="lp-builder-preview-label">Experience</span>
+                  <span className="lp-builder-preview-step">Step 2 of 5</span>
+                </div>
+                <div className="lp-builder-preview-fields">
+                  <div className="lp-builder-preview-field lp-builder-preview-field--filled">
+                    <span className="lp-builder-preview-field-label">Job title</span>
+                    <span className="lp-builder-preview-field-value">Software Engineer</span>
+                  </div>
+                  <div className="lp-builder-preview-field lp-builder-preview-field--filled">
+                    <span className="lp-builder-preview-field-label">Company</span>
+                    <span className="lp-builder-preview-field-value">Acme Corp</span>
+                  </div>
+                  <div className="lp-builder-preview-field">
+                    <span className="lp-builder-preview-field-label">Description</span>
+                    <span className="lp-builder-preview-field-placeholder">Describe your impact…</span>
+                  </div>
+                </div>
+                <div className="lp-builder-preview-progress">
+                  <div className="lp-builder-preview-progress-track">
+                    <div className="lp-builder-preview-progress-fill" />
+                  </div>
+                  <span className="lp-builder-preview-progress-label">40% complete</span>
+                </div>
+              </div>
+
               <div className="lp-autosave-badge">
                 <CheckCircle size={16} color="#10b981" />
                 <span>Changes saved automatically</span>
