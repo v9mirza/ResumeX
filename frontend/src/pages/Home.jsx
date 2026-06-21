@@ -264,12 +264,12 @@ const AuthButtons = () => {
 };
 
 const FAQ_ITEMS = [
-  { q: 'Is ResumeX free?', a: 'Yes. You can create an account, build multiple resumes, and export PDFs and JSON without entering a credit card.' },
-  { q: 'Can I export my resume as PDF and JSON?', a: 'From the preview screen you can download a ready‑to‑send PDF or export your full resume data as JSON at any time.' },
-  { q: 'Are the templates ATS‑friendly?', a: 'The Minimal, Classic, and Modern templates use clean structure and typography so Applicant Tracking Systems can parse your content reliably.' },
-  { q: 'What happens to my data?', a: 'Your resumes are stored securely in your account and can be deleted at any time from your profile. The project is open‑source for full transparency.' },
-  { q: 'Can I create multiple versions of my resume?', a: 'Yes. Use the dashboard to keep separate versions for different roles or companies, and duplicate any resume to iterate quickly.' },
-  { q: 'Does ResumeX write or change my content?', a: 'No. ResumeX focuses on structure, clarity, and exports—you stay in full control of the words on your resume.' },
+  { q: 'Is ResumeX free?', a: 'Yes. You can create an account, build multiple resumes, and export PDFs and JSON without entering a credit card.', icon: CheckCircle, color: '#10b981', bg: 'rgba(16,185,129,0.1)' },
+  { q: 'Can I export my resume as PDF and JSON?', a: 'From the preview screen you can download a ready‑to‑send PDF or export your full resume data as JSON at any time.', icon: FileJson, color: '#f59e0b', bg: 'rgba(245,158,11,0.1)' },
+  { q: 'Are the templates ATS‑friendly?', a: 'The Minimal, Classic, and Modern templates use clean structure and typography so Applicant Tracking Systems can parse your content reliably.', icon: LayoutTemplate, color: '#6366f1', bg: 'rgba(99,102,241,0.1)' },
+  { q: 'What happens to my data?', a: 'Your resumes are stored securely in your account and can be deleted at any time from your profile. The project is open‑source for full transparency.', icon: ShieldCheck, color: '#0082c9', bg: 'rgba(0,130,201,0.1)' },
+  { q: 'Can I create multiple versions of my resume?', a: 'Yes. Use the dashboard to keep separate versions for different roles or companies, and duplicate any resume to iterate quickly.', icon: Copy, color: '#6366f1', bg: 'rgba(99,102,241,0.1)' },
+  { q: 'Does ResumeX write or change my content?', a: 'No. ResumeX focuses on structure, clarity, and exports—you stay in full control of the words on your resume.', icon: PenLine, color: '#10b981', bg: 'rgba(16,185,129,0.1)' },
 ];
 
 const FaqSection = () => {
@@ -277,58 +277,80 @@ const FaqSection = () => {
   return (
     <section className="lp-section-faq">
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{ textAlign: 'center', marginBottom: '40px' }}
-        >
-          <h2 className="lp-section-title">Frequently asked questions</h2>
-        </motion.div>
+        <div className="lp-faq-layout">
+          {/* Left: heading */}
+          <motion.div
+            className="lp-faq-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="lp-section-eyebrow">FAQ</p>
+            <h2 className="lp-section-title">Questions? We&apos;ve got answers.</h2>
+            <p className="lp-faq-subtitle">
+              Everything you need to know before building your first resume.
+            </p>
+            <a
+              href="https://github.com/v9mirza/resumex"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lp-faq-github-link"
+            >
+              <Github size={16} />
+              View source on GitHub
+              <ArrowRight size={14} />
+            </a>
+          </motion.div>
 
-        <div style={{ maxWidth: 720, margin: '0 auto' }}>
-          {FAQ_ITEMS.map((item, i) => {
-            const isOpen = openIdx === i;
-            return (
-              <div
-                key={item.q}
-                style={{ borderBottom: '1px solid var(--lp-border)' }}
-              >
-                <button
-                  onClick={() => setOpenIdx(isOpen ? null : i)}
-                  style={{
-                    width: '100%', background: 'none', border: 'none', cursor: 'pointer',
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                    padding: '18px 0', gap: 12, textAlign: 'left'
-                  }}
-                  aria-expanded={isOpen}
+          {/* Right: accordion */}
+          <div className="lp-faq-list">
+            {FAQ_ITEMS.map((item, i) => {
+              const isOpen = openIdx === i;
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.q}
+                  className={`lp-faq-item${isOpen ? ' lp-faq-item--open' : ''}`}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--lp-text)' }}>{item.q}</span>
-                  <ChevronDown
-                    size={18}
-                    color="var(--lp-text-muted)"
-                    style={{ flexShrink: 0, transition: 'transform 0.3s ease', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                  />
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      key="answer"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28, ease: 'easeInOut' }}
-                      style={{ overflow: 'hidden' }}
+                  <button
+                    className="lp-faq-trigger"
+                    onClick={() => setOpenIdx(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                  >
+                    <span
+                      className="lp-faq-icon"
+                      style={{ background: item.bg, color: item.color }}
+                      aria-hidden="true"
                     >
-                      <p style={{ fontSize: '0.9rem', color: 'var(--lp-text-muted)', lineHeight: 1.65, paddingBottom: 18, margin: 0 }}>
-                        {item.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                      <Icon size={16} />
+                    </span>
+                    <span className="lp-faq-question">{item.q}</span>
+                    <span className="lp-faq-chevron">
+                      <ChevronDown size={16} />
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="answer"
+                        className="lp-faq-answer-wrap"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.28, ease: 'easeInOut' }}
+                      >
+                        <p className="lp-faq-answer">{item.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
