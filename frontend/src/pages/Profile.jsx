@@ -120,7 +120,7 @@ const Profile = () => {
                             {user?.email}
                         </h3>
                         <p style={{ fontSize: '0.85rem', color: 'var(--lp-text-muted)', marginBottom: '4px' }}>
-                            Signed in to Resumex
+                            Signed in to ResumeX
                         </p>
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                             <span

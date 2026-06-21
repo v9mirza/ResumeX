@@ -264,12 +264,12 @@ const AuthButtons = () => {
 };
 
 const FAQ_ITEMS = [
-  { q: 'Is Resumex free?', a: 'Yes. You can create an account, build multiple resumes, and export PDFs and JSON without entering a credit card.' },
+  { q: 'Is ResumeX free?', a: 'Yes. You can create an account, build multiple resumes, and export PDFs and JSON without entering a credit card.' },
   { q: 'Can I export my resume as PDF and JSON?', a: 'From the preview screen you can download a ready‑to‑send PDF or export your full resume data as JSON at any time.' },
   { q: 'Are the templates ATS‑friendly?', a: 'The Minimal, Classic, and Modern templates use clean structure and typography so Applicant Tracking Systems can parse your content reliably.' },
   { q: 'What happens to my data?', a: 'Your resumes are stored securely in your account and can be deleted at any time from your profile. The project is open‑source for full transparency.' },
   { q: 'Can I create multiple versions of my resume?', a: 'Yes. Use the dashboard to keep separate versions for different roles or companies, and duplicate any resume to iterate quickly.' },
-  { q: 'Does Resumex write or change my content?', a: 'No. Resumex focuses on structure, clarity, and exports—you stay in full control of the words on your resume.' },
+  { q: 'Does ResumeX write or change my content?', a: 'No. ResumeX focuses on structure, clarity, and exports—you stay in full control of the words on your resume.' },
 ];
 
 const FaqSection = () => {
@@ -478,8 +478,8 @@ const Home = () => {
   return (
     <div className="landing-page">
       <Seo
-        title="Resumex — Build ATS-friendly resumes in minutes"
-        description="Resumex is an online resume builder for students, developers, and job‑seekers. Create ATS‑friendly resumes with guided steps, live preview, and PDF/JSON export."
+        title="ResumeX — Build ATS-friendly resumes in minutes"
+        description="ResumeX is an online resume builder for students, developers, and job‑seekers. Create ATS‑friendly resumes with guided steps, live preview, and PDF/JSON export."
         canonicalPath="/"
       />
       <LandingNav rightContent={<AuthButtons />} onThemeToggle={transitionToggle} />

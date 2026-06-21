@@ -10,8 +10,8 @@ const LegalPrivacy = () => {
     return (
         <div className="landing-page">
             <Seo
-                title="Privacy Policy | Resumex"
-                description="Read how Resumex collects, stores, and protects your personal data when you use our resume builder."
+                title="Privacy Policy | ResumeX"
+                description="Read how ResumeX collects, stores, and protects your personal data when you use our resume builder."
                 canonicalPath="/privacy-policy"
             />
             <div className="container legal-page-main">
@@ -22,8 +22,8 @@ const LegalPrivacy = () => {
                         Back to Home
                     </Link>
                     <div className="legal-doc-brand">
-                        <img src="/resumex.svg" alt="Resumex logo" style={{ width: 20, height: 20 }} />
-                        <span>Resumex</span>
+                        <img src="/resumex.svg" alt="ResumeX logo" style={{ width: 20, height: 20 }} />
+                        <span>ResumeX</span>
                     </div>
                 </header>
 
@@ -39,10 +39,10 @@ const LegalPrivacy = () => {
                     <section className="legal-doc-section" id="introduction">
                         <h2>1. Introduction</h2>
                         <p>
-                            Welcome to Resumex (“we”, “our”, or “us”). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and disclose your information when you use our website and services (the “Service”), and describes your privacy rights and how the law protects you.
+                            Welcome to ResumeX (“we”, “our”, or “us”). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and disclose your information when you use our website and services (the “Service”), and describes your privacy rights and how the law protects you.
                         </p>
                         <p>
-                            Resumex is an open-source, web-based resume builder. By using the Service, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use the Service.
+                            ResumeX is an open-source, web-based resume builder. By using the Service, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use the Service.
                         </p>
                     </section>
 
@@ -177,7 +177,7 @@ const LegalPrivacy = () => {
                             <li>By email at the contact address listed in the repository, if provided.</li>
                         </ul>
                         <p>
-                            Resumex is an open-source project; we aim to respond to privacy-related inquiries in a timely manner.
+                            ResumeX is an open-source project; we aim to respond to privacy-related inquiries in a timely manner.
                         </p>
                     </section>
                 </div>

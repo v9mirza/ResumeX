@@ -1,6 +1,6 @@
 # Project Structure
 
-This document covers every file in the Resumex codebase — what it is, what it owns, and how it relates to the rest of the system.
+This document covers every file in the ResumeX codebase — what it is, what it owns, and how it relates to the rest of the system.
 
 ---
 

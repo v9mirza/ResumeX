@@ -10,8 +10,8 @@ const LegalTerms = () => {
     return (
         <div className="landing-page">
             <Seo
-                title="Terms of Service | Resumex"
-                description="Review the Terms of Service for using Resumex, the ATS‑friendly online resume builder."
+                title="Terms of Service | ResumeX"
+                description="Review the Terms of Service for using ResumeX, the ATS‑friendly online resume builder."
                 canonicalPath="/terms-of-service"
             />
             <div className="container legal-page-main">
@@ -22,8 +22,8 @@ const LegalTerms = () => {
                         Back to Home
                     </Link>
                     <div className="legal-doc-brand">
-                        <img src="/resumex.svg" alt="Resumex logo" style={{ width: 20, height: 20 }} />
-                        <span>Resumex</span>
+                        <img src="/resumex.svg" alt="ResumeX logo" style={{ width: 20, height: 20 }} />
+                        <span>ResumeX</span>
                     </div>
                 </header>
 
@@ -39,7 +39,7 @@ const LegalTerms = () => {
                     <section className="legal-doc-section" id="agreement">
                         <h2>1. Agreement to Terms</h2>
                         <p>
-                            By accessing or using Resumex (“Service”), you agree to be bound by these Terms of Service (“Terms”). If you are using the Service on behalf of an organization, you represent that you have the authority to bind that organization to these Terms. If you do not agree to these Terms in their entirety, you must not access or use the Service.
+                            By accessing or using ResumeX (“Service”), you agree to be bound by these Terms of Service (“Terms”). If you are using the Service on behalf of an organization, you represent that you have the authority to bind that organization to these Terms. If you do not agree to these Terms in their entirety, you must not access or use the Service.
                         </p>
                         <p>
                             We may update these Terms from time to time. Your continued use of the Service after changes are posted constitutes your acceptance of the revised Terms. We encourage you to review this page periodically.
@@ -49,7 +49,7 @@ const LegalTerms = () => {
                     <section className="legal-doc-section" id="description">
                         <h2>2. Description of Service</h2>
                         <p>
-                            Resumex is an open-source, web-based platform that enables users to create, edit, store, and export professional resumes. The Service includes:
+                            ResumeX is an open-source, web-based platform that enables users to create, edit, store, and export professional resumes. The Service includes:
                         </p>
                         <ul>
                             <li>Account creation and secure authentication</li>
@@ -90,7 +90,7 @@ const LegalTerms = () => {
                             <li>Use the Service to distribute malware, spam, or any harmful or offensive content</li>
                             <li>Scrape, crawl, or use automated means to access the Service without our prior written permission (except for standard search engines indexing publicly available pages, if applicable)</li>
                             <li>Reverse engineer, decompile, or attempt to extract the source code of the Service (except to the extent permitted by applicable law for the open-source components we use)</li>
-                            <li>Resell, sublicense, or commercially exploit the Service or any content obtained through it in a manner that competes with or undermines Resumex</li>
+                            <li>Resell, sublicense, or commercially exploit the Service or any content obtained through it in a manner that competes with or undermines ResumeX</li>
                         </ul>
                         <p>
                             We may remove content or suspend/terminate accounts that we determine, in our sole discretion, violate these rules or are harmful to other users or the Service.
@@ -133,7 +133,7 @@ const LegalTerms = () => {
                             THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
                         </p>
                         <p>
-                            As an open-source project, Resumex may be run by maintainers or third parties. We do not guarantee continuous availability, data preservation, or that the Service will meet your specific requirements. You use the Service at your own risk.
+                            As an open-source project, ResumeX may be run by maintainers or third parties. We do not guarantee continuous availability, data preservation, or that the Service will meet your specific requirements. You use the Service at your own risk.
                         </p>
                     </section>
 
@@ -153,14 +153,14 @@ const LegalTerms = () => {
                     <section className="legal-doc-section" id="indemnification">
                         <h2>10. Indemnification</h2>
                         <p>
-                            You agree to indemnify, defend, and hold harmless Resumex and its contributors, licensors, and service providers from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys’ fees) arising out of or related to (a) your use of the Service, (b) your content, (c) your violation of these Terms or any applicable law, or (d) your violation of any third-party rights. We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, at your expense.
+                            You agree to indemnify, defend, and hold harmless ResumeX and its contributors, licensors, and service providers from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys’ fees) arising out of or related to (a) your use of the Service, (b) your content, (c) your violation of these Terms or any applicable law, or (d) your violation of any third-party rights. We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, at your expense.
                         </p>
                     </section>
 
                     <section className="legal-doc-section" id="governing-law">
                         <h2>11. Governing Law and Disputes</h2>
                         <p>
-                            These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the Resumex project maintainers are based, without regard to its conflict of law provisions. Any dispute arising out of or relating to these Terms or the Service shall be resolved in the courts of that jurisdiction, and you consent to the personal jurisdiction of such courts.
+                            These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the ResumeX project maintainers are based, without regard to its conflict of law provisions. Any dispute arising out of or relating to these Terms or the Service shall be resolved in the courts of that jurisdiction, and you consent to the personal jurisdiction of such courts.
                         </p>
                         <p>
                             If you are a consumer in the European Union or another jurisdiction with mandatory consumer protection laws, nothing in these Terms affects your statutory rights.
@@ -177,7 +177,7 @@ const LegalTerms = () => {
                     <section className="legal-doc-section" id="misc">
                         <h2>13. General</h2>
                         <p>
-                            <strong>Entire agreement.</strong> These Terms, together with our Privacy Policy and any other policies we reference, constitute the entire agreement between you and Resumex regarding the Service.
+                            <strong>Entire agreement.</strong> These Terms, together with our Privacy Policy and any other policies we reference, constitute the entire agreement between you and ResumeX regarding the Service.
                         </p>
                         <p>
                             <strong>Severability.</strong> If any provision of these Terms is held invalid or unenforceable, the remaining provisions will remain in full force and effect.
@@ -197,7 +197,7 @@ const LegalTerms = () => {
                             <li>By email at the contact address listed in the repository, if provided.</li>
                         </ul>
                         <p>
-                            Thank you for using Resumex.
+                            Thank you for using ResumeX.
                         </p>
                     </section>
                 </div>

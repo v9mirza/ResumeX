@@ -41,8 +41,8 @@ const Login = () => {
     return (
         <div className="landing-page">
             <Seo
-                title="Log in to Resumex"
-                description="Sign in to your Resumex account to manage and export your ATS‑friendly resumes."
+                title="Log in to ResumeX"
+                description="Sign in to your ResumeX account to manage and export your ATS‑friendly resumes."
                 canonicalPath="/login"
             />
             <LandingNav

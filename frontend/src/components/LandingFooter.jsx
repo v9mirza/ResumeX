@@ -11,8 +11,8 @@ const LandingFooter = () => (
       <div className="lp-footer-row">
         {/* Brand */}
         <Link to="/" className="lp-footer-brand-link">
-          <img src="/resumex.svg" alt="Resumex" width={20} height={20} />
-          <span>Resumex</span>
+          <img src="/resumex.svg" alt="ResumeX" width={20} height={20} />
+          <span>ResumeX</span>
         </Link>
 
         {/* Nav links */}
@@ -29,7 +29,7 @@ const LandingFooter = () => (
 
       {/* Bottom strip */}
         <div className="lp-footer-bottom">
-          <span>© {YEAR} Resumex. Open-source under the MIT License.</span>
+          <span>© {YEAR} ResumeX. Open-source under the MIT License.</span>
           <span>Built with React · No tracking · No ads</span>
         </div>
     </div>

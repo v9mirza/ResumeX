@@ -7,8 +7,8 @@ const NotFound = () => {
   return (
     <div className="landing-page">
       <Seo
-        title="Page not found | Resumex"
-        description="The page you’re looking for doesn’t exist. Head back to the Resumex home page or sign in to your dashboard."
+        title="Page not found | ResumeX"
+        description="The page you’re looking for doesn’t exist. Head back to the ResumeX home page or sign in to your dashboard."
         canonicalPath="/404"
       />
       <LandingNav rightContent={null} />

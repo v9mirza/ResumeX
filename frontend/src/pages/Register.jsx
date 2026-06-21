@@ -51,8 +51,8 @@ const Register = () => {
     return (
         <div className="landing-page">
             <Seo
-                title="Create a free Resumex account"
-                description="Create a free Resumex account to build ATS‑friendly resumes with live preview and PDF/JSON export."
+                title="Create a free ResumeX account"
+                description="Create a free ResumeX account to build ATS‑friendly resumes with live preview and PDF/JSON export."
                 canonicalPath="/register"
             />
             <LandingNav

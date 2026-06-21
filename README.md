@@ -1,6 +1,6 @@
-# Resumex
+# ResumeX
 
-**Resumex** is an open-source resume builder. It gives you a live preview as you type, exports clean PDFs, and keeps your data entirely under your control.
+**ResumeX** is an open-source resume builder. It gives you a live preview as you type, exports clean PDFs, and keeps your data entirely under your control.
 
 <p>
   <a href="https://github.com/v9mirza/Resumex/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
