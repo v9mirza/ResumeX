@@ -8,5 +8,5 @@ Disallow: /build
 Disallow: /profile
 Disallow: /admin
 
-Sitemap: https://www.resumex.cv/sitemap.xml
+Sitemap: https://resumex.v9mirza.com/sitemap.xml
 

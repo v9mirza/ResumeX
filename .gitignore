@@ -1,16 +1,24 @@
 # Dependencies
-node_modules
+node_modules/
 
 # Local environment files (do not commit)
 .env
-backend/.env
-frontend/.env
+.env.*
+!.env.example
 
 # Build output
 dist/
+dist-ssr/
+build/
+coverage/
+.vite/
+.vercel/
 
 # OS / editor
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
 *.log
 *.local
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const ABSOLUTE_BASE = 'https://www.resumex.cv';
+const ABSOLUTE_BASE = 'https://resumex.v9mirza.com';
 
 export const Seo = ({ title, description, canonicalPath, jsonLd }) => {
   useEffect(() => {
