@@ -3647,28 +3647,27 @@ body.lp-nav-open {
 .lp-footer {
   border-top: 1px solid var(--lp-border);
   background: var(--lp-bg);
-  padding: 0;
 }
 
-.lp-footer-minimal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px 24px;
-  padding: 24px 0;
-  font-size: 0.8125rem;
-  color: var(--lp-text-muted);
+.lp-footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  padding: 52px 0 48px;
+}
+
+.lp-footer-brand {
+  max-width: 330px;
 }
 
 .lp-footer-brand-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
   color: var(--lp-text);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   letter-spacing: -0.01em;
   transition: color 0.15s ease;
 }
@@ -3677,57 +3676,59 @@ body.lp-nav-open {
   color: var(--lp-accent);
 }
 
-.lp-footer-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.lp-footer-copyright {
-  border-left: 1px solid var(--lp-border);
-  padding-left: 16px;
+.lp-footer-brand p {
+  margin: 16px 0 0;
   color: var(--lp-text-muted);
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-.lp-footer-right {
+.lp-footer-nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .lp-footer-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.8125rem;
+  gap: 7px;
+  font-size: 0.875rem;
   color: var(--lp-text-muted);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
-.lp-footer-link:hover {
-  color: var(--lp-text);
+.lp-footer-link:hover,
+.lp-footer-link:focus-visible {
+  color: var(--lp-accent);
+}
+
+.lp-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px 24px;
+  border-top: 1px solid var(--lp-border);
+  padding: 20px 0 24px;
+  color: var(--lp-text-muted);
+  font-size: 0.8125rem;
 }
 
 @media (max-width: 640px) {
-  .lp-footer-minimal {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    padding: 20px 0;
+  .lp-footer-main {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 0 36px;
   }
 
-  .lp-footer-left {
-    flex-direction: column;
-    gap: 8px;
+  .lp-footer-nav {
+    gap: 20px;
   }
 
-  .lp-footer-copyright {
-    border-left: none;
-    padding-left: 0;
+  .lp-footer-bottom {
+    flex-direction: column;
+    padding: 20px 0 28px;
   }
 }
 
